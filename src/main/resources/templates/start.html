@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handing Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Form matrix</h1>
+<form action="#" th:action="@{/start}" th:object="${Form}" method="post">
+    <p>file1: <input type="text" th:field="*{file1}" /></p>
+    <p>file2: <input type="text" th:field="*{file2}" /></p>
+    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+<form action="#" th:action="@{/save}" th:object="${matrixDto}" method="post">
+    <p>Row: <input type="text" th:field="*{rows}" /></p>
+    <p>Column: <input type="text" th:field="*{columns}" /></p>
+    <p>Elements: <input type="text" th:field="*{elements}" /></p>
+    <p>File name: <input type="text" th:field="*{filename}" /></p>
+    <p><input type="submit" value="Save" /> <input type="reset" value="Reset" /></p>
+</form>
+</body>
+</html>
