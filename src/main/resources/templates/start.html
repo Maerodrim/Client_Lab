@@ -18,5 +18,9 @@
     <p>File name: <input type="text" th:field="*{filename}" /></p>
     <p><input type="submit" value="Save" /> <input type="reset" value="Reset" /></p>
 </form>
+<h1>Bluer</h1>
+<form action="#" th:action="@{/BluerController/initPicture}" th:object="${Form}" method="get">
+    <p><input type="submit" value="start" /> </p>
+</form>
 </body>
 </html>
