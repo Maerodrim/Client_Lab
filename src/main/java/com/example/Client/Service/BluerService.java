@@ -25,14 +25,13 @@ public class BluerService
     }
 
     public static File[] bluer(Form form) {
-        String url = "rmi://localhost/";
         try {
             System.out.println("Client has started");
             File input = new File(form.getFile1() + ".jpg");
             BufferedImage inputImg = ImageIO.read(input);
             File output = new File(form.getFile2() + ".jpg");
-            File output2 = new File("I:\\Client\\src\\main\\resources\\templates\\image1.jpg");
-            File output3 = new File( "I:\\Client\\src\\main\\resources\\templates\\image2.jpg");
+            File output2 = new File("I:\\Client\\src\\main\\resources\\static\\out\\\\image1.jpg");
+            File output3 = new File( "I:\\Client\\src\\main\\resources\\static\\out\\\\image2.jpg");
             ByteArrayOfImage baoi = new ByteArrayOfImage(inputImg);
             byte[] outBaoiByte = bluer.blurring(baoi.getByteOfImage());
             ByteArrayOfImage outBaoi  = new ByteArrayOfImage(outBaoiByte);
@@ -46,11 +45,5 @@ public class BluerService
             e.printStackTrace();
         }
         return new File[2];
-    }
-
-    public static String getBaseName(String filename) {
-        int index = filename.lastIndexOf(".");
-        if (index == -1) return filename;
-        return filename.substring(0, index);
     }
 }
