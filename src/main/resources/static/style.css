@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, Verdana, sans-serif; /* Семейство шрифтов */
+    font-size: 11pt; /* Размер основного шрифта в пунктах */
+    background-color: #e8f3f1; /* Цвет фона веб-страницы */
+    color: #333; /* Цвет основного текста */
+}
+h1 {
+    color: #a223a0; /* Цвет заголовка */
+    font-size: 24pt; /* Размер шрифта в пунктах */
+    font-family: Arial, Verdana, sans-serif; /* Семейство шрифтов */
+    font-weight: normal; /* Нормальное начертание текста */
+}
+a {
+    color: #008000; /* Цвет обычной ссылки */
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+a:visited {
+    color: #c10f15; /* Цвет посещённой ссылки */
+}
+a:hover {
+    color: #ec9292; /* Цвет ссылки при наведении на нее курсора мыши */
+    text-decoration: underline; /* Добавляем подчеркивание */
+}
+.form {
+    width: 50%;
+    background: #f1f1f1;
+    color: #ff0000;
+}

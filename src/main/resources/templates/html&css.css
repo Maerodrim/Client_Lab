@@ -1,0 +1,15 @@
+.table {
+    width: 98%;
+    background: #111111;
+   padding: 5px;
+    padding-right: 20px;
+    /*padding: 5px 20px 5px 5px;*/
+    border: solid 1px black;
+    float: left;
+}
+
+.form {
+    width: 50%;
+    background: #f1f1f1;
+    color: #e600ff;
+}
