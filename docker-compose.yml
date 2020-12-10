@@ -1,9 +1,9 @@
 version: "2"
 services:
     users:
-        image: vendor/users
+        image: maerodrim/clientlab
         expose:
-            - 80
+            - 8080
         labels:
             project.git: "https://github.com/Maerodrim/Client_Lab.git"    # ссылка на репозиторий
             project.build: make                          # добавляем команду для сборки имидж
@@ -11,8 +11,8 @@ services:
       image: postgres:11.4
       restart: always
       environment:
-           - POSTGRES_USER=userxyz
-           - POSTGRES_PASSWORD=password123
+           - POSTGRES_USER=postgres
+           - POSTGRES_PASSWORD=postgres
            - POSTGRES_DB=mydb1
       ports:
            - "5434:5432"
