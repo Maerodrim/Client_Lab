@@ -1,5 +1,5 @@
 FROM openjdk:14
 WORKDIR /usr/local/app
-ADD docker-demo-0.0.1-SNAPSHOT.jar app.jar
+ADD target/Client-0.0.1-SNAPSHOT.jar app.jar
 CMD java -jar ./app.jar
 
