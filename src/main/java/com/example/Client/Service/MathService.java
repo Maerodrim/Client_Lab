@@ -13,7 +13,8 @@ import java.io.File;
 
 
 @Service
-public class MathService{
+public class MathService {
+    private File file = new File("doubleResponse.xml");
 
     @Autowired
     public MathService(DoubleResponceRepository doubleResponceRepository) {
@@ -30,12 +31,11 @@ public class MathService{
     }
 
     public File objectToXml(DoubleResponse doubleResponse) {
-        File file = new File("I:\\Client\\src\\main\\resources\\templates\\out\\doubleResponse.xml");
+
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(DoubleResponse.class);
             Marshaller marshaller = jaxbContext.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            //marshaller.marshal(doubleResponse, new File("I:\\Client\\src\\main\\resources\\static\\out\\doubleResponse.xml"));
             marshaller.marshal(doubleResponse, file);
             marshaller.marshal(doubleResponse, System.out);
             return file;
@@ -44,8 +44,9 @@ public class MathService{
         }
         return file;
     }
+
     public File loadFile() {
-        return new File("I:\\Client\\src\\main\\resources\\templates\\out\\doubleResponse.xml");
+        return file;
     }
 
     public void objectToXmlJsp(DoubleResponse doubleResponse) {
@@ -53,7 +54,7 @@ public class MathService{
             JAXBContext jaxbContext = JAXBContext.newInstance(DoubleResponse.class);
             Marshaller marshaller = jaxbContext.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            //marshaller.marshal(doubleResponse, new File("I:\\Client\\src\\main\\resources\\templates\\webapp\\WEB-INF\\html\\doubleResponse.xml"));
+            marshaller.marshal(doubleResponse, file);
             marshaller.marshal(doubleResponse, System.out);
         } catch (Exception e) {
             e.printStackTrace();

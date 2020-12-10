@@ -13,15 +13,15 @@ import org.springframework.remoting.rmi.RmiProxyFactoryBean;
 public class ClientApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
-		Bluer service = SpringApplication.run(ClientApplication.class, args).getBean(Bluer.class);
-		BluerService.setBluer(service);
+		/*Bluer service =*/ SpringApplication.run(ClientApplication.class, args);/*.getBean(Bluer.class);
+		BluerService.setBluer(service);*/
 	}
-
+/*
 	@Bean
 	RmiProxyFactoryBean service() {
 		RmiProxyFactoryBean rmiProxyFactory = new RmiProxyFactoryBean();
 		rmiProxyFactory.setServiceUrl("rmi://localhost:1099/Blurring");
 		rmiProxyFactory.setServiceInterface(Bluer.class);
 		return rmiProxyFactory;
-	}
+	}*/
 }
