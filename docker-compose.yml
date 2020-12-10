@@ -3,7 +3,7 @@ services:
   postgres:
     build:
       context: services/postgres
-      dockerfile: Dockerfile.development
+      dockerfile: services/postgres/Dockerfile.development
     ports:
       - "5433:5432"
     environment:
@@ -16,10 +16,10 @@ services:
   client:
     build:
       context: services/app
-      dockerfile: Dockerfile.development
+      dockerfile: services/app/Dockerfile.development
     command: java -jar ./app.jar
     environment:
-      - PORT=8091
+      - PORT=8080
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres/postgres
       - JS_URL=http://localhost
     image: 'my-java-application'
