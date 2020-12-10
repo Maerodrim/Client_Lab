@@ -17,6 +17,7 @@
 	<properties>
 		<java.version>11</java.version>
         <kotlin.version>1.4.21</kotlin.version>
+		<docker.image.prefix>Client</docker.image.prefix>
     </properties>
 
 	<dependencies>
@@ -52,6 +53,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.spotify</groupId>
+			<artifactId>dockerfile-maven-extension</artifactId>
+			<version>1.4.13</version>
 		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>
@@ -189,6 +195,20 @@
                     </execution>
                 </executions>
             </plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<configuration>
+					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+					<resources>
+						<resource>
+							<directory>${project.build.directory}</directory>
+							<include>${project.build.finalName}.jar</include>
+						</resource>
+					</resources>
+				</configuration>
+			</plugin>
         </plugins>
 	</build>
 

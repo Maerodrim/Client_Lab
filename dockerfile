@@ -1,4 +1,4 @@
-FROM openjdk:11
+FROM openjdk:14
 EXPOSE 8080
 ARG JAR_FILE=target/Client-0.0.1-SNAPSHOT.jar
 ADD ${JAR_FILE} Client-0.0.1-SNAPSHOT.jar
